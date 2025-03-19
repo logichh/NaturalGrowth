@@ -4,3 +4,7 @@
 https://legacy.curseforge.com/minecraft/bukkit-plugins/naturalgrowth
 
 https://youtu.be/9b7CvWcjuFw
+
+Made by CrazyMonkeyYT
+
+Towny Addon by [ConquerEarthMC](https://www.conquerearthmc.com/)
