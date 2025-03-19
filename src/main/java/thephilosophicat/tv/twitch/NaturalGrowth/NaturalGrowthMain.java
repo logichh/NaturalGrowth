@@ -1,4 +1,4 @@
-package thephilosophicat.tv.twitch.NatruralGrowth;
+package thephilosophicat.tv.twitch.NaturalGrowth;
 /*
  * Author ThePhilosophiCat
  * 
@@ -11,13 +11,10 @@ package thephilosophicat.tv.twitch.NatruralGrowth;
  * 
  */
 
-
 import java.util.ArrayList;
 import java.util.List;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-
-
 
 public class NaturalGrowthMain extends JavaPlugin {
 	public FileConfiguration config = getConfig();
@@ -26,12 +23,17 @@ public class NaturalGrowthMain extends JavaPlugin {
     @Override
     public void onEnable() {
     	// registers commands 
-        this.getCommand("doPlaceDespawn").setExecutor(new DoPlaceDespawn());
-        this.getCommand("doPlaceCrops").setExecutor(new DoPlaceCrops());
-        this.getCommand("do2x2Placement").setExecutor(new Do2x2Placement());
-        this.getCommand("doPlaceDespawn").setTabCompleter(new TabCompleation());
-        this.getCommand("doPlaceCrops").setTabCompleter(new TabCompleation());
-        this.getCommand("do2x2Placement").setTabCompleter(new TabCompleation());
+        this.getCommand("doplacedespawn").setExecutor(new DoPlaceDespawn());
+        this.getCommand("doplacedespawn").setTabCompleter(new TabCompleation());
+        
+        this.getCommand("doplacecrops").setExecutor(new DoPlaceCrops());
+        this.getCommand("doplacecrops").setTabCompleter(new TabCompleation());
+        
+        this.getCommand("do2x2placement").setExecutor(new Do2x2Placement());
+        this.getCommand("do2x2placement").setTabCompleter(new TabCompleation());
+        
+        this.getCommand("toggletowngrowth").setExecutor(new ToggleTownGrowth(this));
+        this.getCommand("toggletowngrowth").setTabCompleter(new TabCompleation());
 
     	//sets the default config file
     	String[] itemDrops ={"ACACIA_SAPLING","BIRCH_SAPLING","CHERRY_SAPLING","DARK_OAK_SAPLING","OAK_SAPLING","SPRUCE_SAPLING",

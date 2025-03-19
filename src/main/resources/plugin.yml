@@ -21,7 +21,6 @@ commands:
       description: Toggle natural growth for your town
       usage: "/<command> [True | False]"
       permission: naturalgrowth.town.toggle
-      
 
 permissions:
   plugin.Rules:

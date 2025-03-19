@@ -1,4 +1,4 @@
-package thephilosophicat.tv.twitch.NatruralGrowth;
+package thephilosophicat.tv.twitch.NaturalGrowth;
 
 import java.util.ArrayList;
 import java.util.Collections;

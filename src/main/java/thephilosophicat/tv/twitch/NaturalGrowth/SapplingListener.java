@@ -1,4 +1,4 @@
-package thephilosophicat.tv.twitch.NatruralGrowth;
+package thephilosophicat.tv.twitch.NaturalGrowth;
 import java.util.List;
 
 /*
@@ -14,6 +14,9 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ItemDespawnEvent;
+import com.palmergames.bukkit.towny.TownyAPI;
+import com.palmergames.bukkit.towny.object.TownBlock;
+import com.palmergames.bukkit.towny.object.Town;
   
 public class SapplingListener implements Listener {
 	NaturalGrowthMain instance = NaturalGrowthMain.getPlugin(NaturalGrowthMain.class);
@@ -25,6 +28,24 @@ public class SapplingListener implements Listener {
 	
 	@EventHandler
 	public void onSaplingDespawn(ItemDespawnEvent event) {
+		// Check if we're in a town and if natural growth is enabled for that town
+		Location loc = event.getLocation();
+		TownBlock townBlock = TownyAPI.getInstance().getTownBlock(loc);
+		
+		if (townBlock != null) {
+			try {
+				Town town = townBlock.getTown();
+				String townUUID = town.getUUID().toString();
+				
+				// Check if natural growth is enabled for this town
+				if (!config.getBoolean("townSettings." + townUUID, true)) {
+					return; // Natural growth is disabled for this town
+				}
+			} catch (Exception e) {
+				return; // If there's any error getting town info, skip the event
+			}
+		}
+
 		//Determines if despawning entity is a plant 
 	//	Bukkit.broadcastMessage(event.getEntity().getItemStack().getType().getKey().getKey());
 		if (config.getBoolean("doPlaceDespawn")){
