@@ -15,6 +15,7 @@ A Minecraft plugin that automatically plants dropped items instead of letting th
 - `/doPlaceDespawn [true/false]` - Enable/disable general item planting
 - `/doPlaceCrops [true/false]` - Enable/disable crop planting
 - `/do2x2Placement [true/false]` - Enable/disable 2x2 tree placement
+- `/toggletowngrowth [true/false]` - Toggle natural growth in your town
 
 ## Permissions
 
