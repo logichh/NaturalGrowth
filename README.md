@@ -57,7 +57,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Author
 
-ThePhilosophiCat #edited by logichh
+ThePhilosophiCat #edited by logichh from conquerearthmc.com
 
 https://legacy.curseforge.com/minecraft/bukkit-plugins/naturalgrowth
 
